@@ -2,8 +2,18 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from 'pg';
 
+
+
+
 const app = express();
 const port = 3001;
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // const db = new pg.Client({
 //   user: 'postgres',
